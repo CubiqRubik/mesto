@@ -1,0 +1,8 @@
+.elements__element-card {
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

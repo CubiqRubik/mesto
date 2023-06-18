@@ -1,0 +1,13 @@
+.profile__info-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 18px;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__info-group {
+        align-items: center;
+        gap: 10px;
+    }
+  }
