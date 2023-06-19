@@ -20,5 +20,4 @@
 - оптимизированные изображения.
 
 Ссылка на GitHub Pages:
-
-
+https://cubiqrubik.github.io/mesto/
