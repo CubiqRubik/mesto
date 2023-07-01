@@ -1,4 +1,5 @@
 .elements__element-image {
    height: 282px;
    border-radius: 10px 10px 0 0;
+   object-fit: cover;
 }
