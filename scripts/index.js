@@ -7,8 +7,8 @@ const formElementProfile = editProfilePopup.querySelector(".popup__form");
 const titleElement = document.querySelector(".profile__title");
 const subtitleElement = document.querySelector(".profile__subtitle");
 
-const userNameInput = editProfilePopup.querySelector(".popup__name");
-const userAboutInput = editProfilePopup.querySelector(".popup__about");
+const userNameInput = editProfilePopup.querySelector(".popup__input_type_name");
+const userAboutInput = editProfilePopup.querySelector(".popup__input_type_about");
 
 
 function openPopup(popupElement) {
