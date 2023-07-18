@@ -1,0 +1,14 @@
+.element__like {
+    overflow: hidden;
+    border: none;
+    background: url(../../../images/Vector.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 19px;
+    width: 22px;
+    transition: 0.3s;
+}
+
+.element__like:hover {
+    opacity: .5;
+}
