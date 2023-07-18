@@ -66,7 +66,7 @@ function placeSubmitHandler(evt) {
         name: titleplaceValue.value, 
         link: linkPlaceValue.value
     })
-    cardsAdd.append(card); // добавл контент в html
+    cardsAdd.prepend(card); // добавл контент в html
     closePopup(openPlace);
     addlike()
     removeCard()
@@ -75,7 +75,7 @@ function placeSubmitHandler(evt) {
 function generateCards() {
     initialCards.forEach((item, index) => {
         let card = createCard(item)
-        cardsAdd.append(card)
+        cardsAdd.prepend(card)
     })
     addlike()
     removeCard()
