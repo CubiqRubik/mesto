@@ -35,15 +35,11 @@ const jobValue = profileForm.elements.job
 const titleplaceValue = placeForm.elements.name
 const linkPlaceValue = placeForm.elements.link
 
-console.log()
-console.log()
-
 // Константы
 const nameInputContent = document.querySelector(".profile__title")
 const jobInputContent = document.querySelector(".profile__subtitle")
 const cardsAddContainer = document.querySelector(".elements__list")
 const titlePicturePopup = document.querySelector(".popup__title-picture")
-const elementImg = document.querySelectorAll(".element__img")
 const elementTitle = document.querySelector(".element__title")
 const imgPicturePopup = document.querySelector(".popup__image-picture")
 
@@ -61,7 +57,6 @@ function closePopup(popup) {
 
 // попап открытия редактирования профиля и присвоение полей с данными
 function openPopupFormProfile() {
-  console.log("hhhhhh")
   openPopup(profilePopup)
   nameValue.value = nameInputContent.textContent
   jobValue.value = jobInputContent.textContent
@@ -113,7 +108,11 @@ closePopupButtonBigImage.addEventListener("click", () => {
   closePopup(picturePopup)
 })
 
-function picturePopupPlace(card, link) {
+/////////////////////
+///     ФУНКЦИИ   ///
+/////////////////////
+
+function openPicturePopup(card, link) {
   const cardTitle = card.querySelector(".element__title").textContent
 
   imgPicturePopup.src = link
@@ -123,7 +122,7 @@ function picturePopupPlace(card, link) {
   openPopup(picturePopup)
 }
 
-function generateCards(value) {
+function generateCard(value) {
   //клонирую карточку
   const card = itemTemplate.querySelector(".element").cloneNode(true)
   if (card) {
@@ -136,17 +135,16 @@ function generateCards(value) {
       //заполняю контентом
       title.textContent = value.name
       img.src = value.link
+      img.alt = "фото карточка с изображнием красивых городов России"
 
-      console.log()
-
-      like.addEventListener("click", addLikeHandle)
+      like.addEventListener("click", toggleLike)
 
       trash.addEventListener("click", () => {
         card.remove()
       })
 
       img.addEventListener("click", () => {
-        picturePopupPlace(card, value.link)
+        openPicturePopup(value.name, value.link)
       })
     }
   }
@@ -159,14 +157,14 @@ function renderCard(card, container) {
 
 function render() {
   initialCards.forEach((value) => {
-    const newCard = generateCards(value)
+    const newCard = generateCard(value)
     if (newCard) renderCard(newCard, cardsAddContainer)
   })
 }
 
 render()
 
-function addLikeHandle(event) {
+function toggleLike(event) {
   event.target.classList.toggle("element__like_active")
 }
 
@@ -174,7 +172,7 @@ function handlePlaceFormSubmit(evt) {
   evt.preventDefault()
   const name = titleplaceValue.value
   const link = linkPlaceValue.value
-  const newCard = generateCards({ name, link })
+  const newCard = generateCard({ name, link })
   if (newCard) renderCard(newCard, cardsAddContainer)
   closePopup(placePopup)
   placeForm.reset()

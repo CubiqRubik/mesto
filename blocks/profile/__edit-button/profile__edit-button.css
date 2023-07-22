@@ -1,7 +1,7 @@
 .profile__edit-button {
     overflow: hidden;
     border: none;
-    background: url(../../../images/edit-button.svg) center no-repeat;
+    background: url(../../../images/Edit-Button.svg) center no-repeat;
     background-size: 100%;
     cursor: pointer;
     height: 24px;

@@ -10,40 +10,43 @@
   </head>
 
   <body>
-    <div class="page">
-      <header class="header page__container">
-        <img
-          src="./images/header-logo.svg"
-          class="header__logo"
-          alt="логотип"
-        />
-      </header>
-      <main class="page__content">
-        <section class="profile page__container">
-          <div class="profile__form">
-            <img
-              src="./images/Avatar.png"
-              alt="Автар"
-              class="profile__avatar"
-            />
-            <div class="profile__description">
-              <div class="profile__info">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <button class="profile__edit-button" type="button"></button>
+    <div class="root">
+      <div class="page">
+        <header class="header page__container">
+          <img
+            src="./images/header-logo.svg"
+            class="header__logo"
+            alt="логотип"
+          />
+        </header>
+        <main class="page__content">
+          <section class="profile page__container">
+            <div class="profile__form">
+              <img
+                src="./images/Avatar.png"
+                alt="Автар"
+                class="profile__avatar"
+              />
+              <div class="profile__description">
+                <div class="profile__info">
+                  <h1 class="profile__title">Жак-Ив Кусто</h1>
+                  <button class="profile__edit-button" type="button"></button>
+                </div>
+                <p class="profile__subtitle">Исследователь океана</p>
               </div>
-              <p class="profile__subtitle">Исследователь океана</p>
             </div>
-          </div>
-          <button class="profile__button" type="button"></button>
-        </section>
-        <section class="elements page__container">
-          <ul class="elements__list"></ul>
-        </section>
-      </main>
-      <footer class="footer page__container">
-        <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
-      </footer>
+            <button class="profile__button" type="button"></button>
+          </section>
+          <section class="elements page__container">
+            <ul class="elements__list"></ul>
+          </section>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
+        </footer>
+      </div>
     </div>
+
     <div class="popup" id="popup_profile">
       <div class="popup__container popup__container_form">
         <h2 class="popup__title popup__title_form">Редактировать профиль</h2>
@@ -100,7 +103,7 @@
     </div>
     <div class="popup" id="popup_picture">
       <div class="popup__container-picture">
-        <img class="popup__image-picture" src="#" alt="#" />
+        <img class="popup__image-picture" src="#" alt="Картинка" />
         <h2 class="popup__title-picture"></h2>
         <button
           class="popup__close popup__close-picture"

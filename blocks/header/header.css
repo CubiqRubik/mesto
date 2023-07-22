@@ -1,18 +1,27 @@
 .header {
-    max-width: 880px;
+  height: 74px;
+  margin: 45px 200px 0 200px;
+  width: calc(100% - 400px);
+  border-bottom: 1px rgba(84, 84, 84, 0.7) solid;
+  padding-bottom: 31px;
+}
+
+@media screen and (max-width: 1050px) {
+  .header {
+    width: 80%;
     margin: 0 auto;
-    box-sizing: border-box;
-    padding: 45px 0 0 0;
-    border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+    padding: 28px 0 0 0;
+  }
 }
-@media (max-width: 1000px) {
-    .header{
-        padding: 45px 32px 0 32px;
-    }
+
+@media screen and (max-width: 778px) {
+  .header {
+    width: 90%;
+  }
 }
-@media (max-width: 425px) {
-    .header{
-        max-width: 320px;
-        padding: 28px 0 0 0;
-    }
+
+@media screen and (max-width: 320px) {
+  .header {
+    height: 56px;
+  }
 }
