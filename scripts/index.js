@@ -112,13 +112,11 @@ closePopupButtonBigImage.addEventListener("click", () => {
 ///     ФУНКЦИИ   ///
 /////////////////////
 
-function openPicturePopup(card, link) {
-  const cardTitle = card.querySelector(".element__title").textContent
-
+function openPicturePopup(name, link) {
+  picturePopup.classList.add("popup_opened")
   imgPicturePopup.src = link
-  imgPicturePopup.alt = cardTitle
-  titlePicturePopup.textContent = cardTitle
-  console.log(titlePicturePopup)
+  imgPicturePopup.alt = name
+  titlePicturePopup.textContent = name
   openPopup(picturePopup)
 }
 
@@ -135,7 +133,7 @@ function generateCard(value) {
       //заполняю контентом
       title.textContent = value.name
       img.src = value.link
-      img.alt = "фото карточка с изображнием красивых городов России"
+      img.alt = value.name
 
       like.addEventListener("click", toggleLike)
 
