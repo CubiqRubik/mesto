@@ -1,127 +1,92 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Яндекс Практикум" />
-    <meta name="description" content="Четвертый Спринт" />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <title>Mesto 5</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лендинг page с карточками городов России.">
+    <meta name="author" content="Vadim Frolov">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="shortcut icon" href="./images/logo-icon.png">
+    <title>Проектная работа Mesto</title>
   </head>
-
-  <body>
-    <div class="root">
-      <div class="page">
-        <header class="header page__container">
-          <img
-            src="./images/header-logo.svg"
-            class="header__logo"
-            alt="логотип"
-          />
-        </header>
-        <main class="page__content">
-          <section class="profile page__container">
-            <div class="profile__form">
-              <img
-                src="./images/Avatar.png"
-                alt="Автар"
-                class="profile__avatar"
-              />
-              <div class="profile__description">
-                <div class="profile__info">
-                  <h1 class="profile__title">Жак-Ив Кусто</h1>
-                  <button class="profile__edit-button" type="button"></button>
-                </div>
-                <p class="profile__subtitle">Исследователь океана</p>
-              </div>
+  <body class="root">
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="profile__container">
+            <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
+            <div class="profile__info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" id="myBtn" type="button"></button>
+              <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <button class="profile__button" type="button"></button>
-          </section>
-          <section class="elements page__container">
-            <ul class="elements__list"></ul>
-          </section>
-        </main>
-        <footer class="footer">
-          <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
-        </footer>
-      </div>
-    </div>
-
-    <div class="popup" id="popup_profile">
-      <div class="popup__container popup__container_form">
-        <h2 class="popup__title popup__title_form">Редактировать профиль</h2>
-        <form class="popup__form popup__form_form" name="form">
-          <input
-            type="text"
-            class="popup__field popup__field_form"
-            id="name"
-            name="name"
-            placeholder="Имя"
-          />
-          <input
-            type="text"
-            class="popup__field popup__field_form"
-            id="job"
-            name="job"
-            placeholder="Описание"
-          />
-          <button class="popup__button popup__button_form" type="submit">
-            Сохранить
-          </button>
-        </form>
-        <button class="popup__close" type="button"></button>
-      </div>
-    </div>
-    <div class="popup" id="popup_place">
-      <div class="popup__container popup__container_place">
-        <h2 class="popup__title popup__title_place">Новое место</h2>
-        <form
-          class="popup__form popup__form_place"
-          name="place"
-          id="place__form"
-        >
-          <input
-            type="text"
-            class="popup__field popup__field_place"
-            id="place"
-            name="name"
-            placeholder="Имя"
-          />
-          <input
-            type="url"
-            class="popup__field popup__field_place"
-            id="url"
-            name="link"
-            placeholder="Место"
-          />
-          <button class="popup__button popup__button_place" type="submit">
-            Создать
-          </button>
-        </form>
-        <button class="popup__close" type="button"></button>
-      </div>
-    </div>
-    <div class="popup" id="popup_picture">
-      <div class="popup__container-picture">
-        <img class="popup__image-picture" src="#" alt="Картинка" />
-        <h2 class="popup__title-picture"></h2>
-        <button
-          class="popup__close popup__close-picture"
-          type="button"
-        ></button>
-      </div>
-    </div>
-    <template id="item__template">
-      <li class="element">
-        <img class="element__img" src="#" alt="Картинка" />
-        <div class="element__card">
-          <h2 class="element__title"></h2>
-          <button class="element__like" type="button"></button>
+          </div>
+          <button class="profile__add-button" type="button"></button>
+        </section>
+        <section class="elements"></section>
+        <template id="element-template">
+          <div class="element">
+            <button class="element__trash"></button>
+            <img class="element__mask" src="#" alt="Изображения городов России">
+            <div class="element__group">
+              <h2 class="element__title"></h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+        </template>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2023. Артем Дроботун</p>
+      </footer>
+      <div class="popup popup_type_edit-profile">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form" name="editForm" id="editForm" novalidate>
+            <label class="popup__label">
+              <input id="nameInput" class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+              <span class="nameInput-error error"></span>
+            </label>
+            <label class="popup__label">
+              <input id="jobInput" class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
+              <span class="jobInput-error error"></span>
+            </label>
+            <button class="popup__save popup__save_disabled" type="submit">Сохранить</button>
+          </form>
         </div>
-        <button class="element__trash" type="button"></button>
-      </li>
-    </template>
-    <script src="./scripts/cards.js" defer></script>
-    <script src="./scripts/index.js" defer></script>
+      </div>
+      <div class="popup popup_type_add-card">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form class="popup__form" name="addForm" id="addForm" novalidate>
+            <label class="popup__label">
+              <input id="nameInputNew" class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+              <span class="nameInputNew-error error"></span>
+            </label>
+            <label class="popup__label">
+              <input id="linkInputNew" class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку" required>
+              <span class="linkInputNew-error error"></span>
+            </label>
+            <button class="popup__save popup__save_disabled" type="submit">Создать</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup_type_image">
+        <figure class="popup__image-container">
+          <img class="popup__image" src="#" alt="Изображения городов России">
+          <figcaption class="popup__image-title"></figcaption>
+          <button class="popup__close" type="button"></button>
+        </figure>
+      </div>
+    </div>
+    <script src="./scripts/validationConfig.js"></script>
+    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/initialCards.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

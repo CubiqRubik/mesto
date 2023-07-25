@@ -1,14 +1,5 @@
 .popup__form {
-    max-width: 358px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-@media (max-width: 550px) {
-    .popup__form {
-        padding: 0 22px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
