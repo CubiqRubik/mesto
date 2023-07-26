@@ -19,19 +19,12 @@
   padding-right: 20px;
   outline: none;
   padding-bottom: 9px;
-  /*padding-top: 15px;*/
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  
 }
 
 .popup__input:last-of-type {
   margin-bottom: 0px;
 }
-
-/*.popup__input:focus {
-  outline: 3px solid rgba(100, 149, 237, 0.8);
-  border-radius: 2px;
-}*/
 
 @media screen and (max-width: 500px) {
   .popup__input {
