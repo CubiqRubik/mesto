@@ -7,7 +7,7 @@
 
 **Figma**
 
-* [Ссылка на макет в Figma] (https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Ссылка на макет в Figma] (https://www.figma.com/file/2ZnGVTHFClV0wO9ObSc6Pj/JavaScript.Sprint-6?type=design&node-id=0-1&mode=design&t=NfyTxbeU285q4434-0)
 
 Стек:
 
@@ -19,6 +19,7 @@
 - интерактивные кнопки;
 - оптимизированные изображения
 - добавление и удаление карточек.
+- валидация форм
 
 Ссылка на GitHub Pages:
 https://cubiqrubik.github.io/mesto/
