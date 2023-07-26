@@ -25,7 +25,7 @@ const profileParag = document.querySelector(".profile__subtitle")
 const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content
 
-const imageOpenPopup = document.querySelector(".popup__image-container")
+const openImagePopup = document.querySelector(".popup__image-container")
 const imageClosePopup = document.querySelector(".popup__close")
 const imageImg = document.querySelector(".popup__image")
 const imageTitle = document.querySelector(".popup__image-title")
@@ -103,7 +103,7 @@ function submitProfileForm(evt) {
 
 formProfile.addEventListener("submit", submitProfileForm)
 
-function imageOpen(card, link) {
+function openImage(card, link) {
   imageImg.src = link
   imageImg.alt = card
   imageTitle.textContent = card
@@ -122,7 +122,7 @@ function createCard(value) {
       mask.src = value.link
       mask.alt = title.textContent
       mask.addEventListener("click", () => {
-        imageOpen(title.textContent, value.link)
+        openImage(title.textContent, value.link)
       })
       trash.addEventListener("click", () => {
         card.remove()
