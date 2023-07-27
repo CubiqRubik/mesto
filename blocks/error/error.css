@@ -7,4 +7,5 @@
   color: #ff0000;
   display: block;
   max-width: 358px;
+  word-wrap: break-word;
 }
